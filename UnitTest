@@ -1,0 +1,49 @@
+using System;
+using Diego;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace UnitTesting
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void PruebaSave()
+        {
+            //Organizar
+            Person Persona = new Person("Sofia", 1000);
+            double valoresperado = 1500;
+            //Actuar
+            Persona.Save(500);
+            double valorobtenido = Persona.SaveMoney;
+            //Afirmar
+            Assert.AreEqual(valoresperado, valorobtenido);
+        }
+
+        [TestMethod]
+        public void PruebaSpend()
+        {
+            //Organizar
+            Person Persona = new Person("Laura", 1000);
+            double valoresperado = 500;
+            //Actuar
+            Persona.Spend(500);
+            double valorobtenido = Persona.SaveMoney;
+            //Afirmar
+            Assert.AreEqual(valoresperado, valorobtenido);
+        }
+
+        [TestMethod]
+        public void PruebaName()
+        {
+            //Organizar
+            Person Persona = new Person("Misak Safar", 1000);
+            string valoresperado = "Diego Vaca";
+            //Actuar
+            Persona.ChangeName("Diego Vaca");
+            string valorobtenido = Persona.Name;
+            //Afirmar
+            Assert.AreEqual(valoresperado, valorobtenido);
+        }
+    }
+}
